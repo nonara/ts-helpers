@@ -1,6 +1,6 @@
 {
   "name": "@nonara/ts-helpers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Helpers for TypeScript projects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
