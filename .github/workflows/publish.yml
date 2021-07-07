@@ -32,6 +32,6 @@ jobs:
           FORCE_COLOR: 1
 
       - name: Publish to NPM
-        run: yarn run publish
+        run: yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
