@@ -141,7 +141,6 @@ export function snakeToCamel<T extends string>(str: T): SnakeToCamelCase<T>
  */
 export function snakeToCamel<T extends object>(obj: T):
 // @formatter:off
-  T extends Function ? T :
   T extends Array<infer U> ? T :
   T extends null ? T :
     { [K in keyof T as SnakeToCamelCase<K>]: T[K] }
@@ -164,13 +163,12 @@ export function snakeToCamel<T extends string | object>(src: T): string | Record
 /**
  * Converts string from camelCase to snake_case
  */
-export function camelToSnake<T extends string | object>(str: T): CamelToSnakeCase<T>
+export function camelToSnake<T extends string>(str: T): CamelToSnakeCase<T>
 /**
  * Shallow copies object, converting property keys from camelCase to snake_case
  */
-export function camelToSnake<T extends string | object>(obj: T):
+export function camelToSnake<T extends object>(obj: T):
 // @formatter:off
-  T extends Function ? T :
   T extends Array<infer U> ? T :
   T extends null ? T :
   { [K in keyof T as CamelToSnakeCase<K>]: T[K] }
