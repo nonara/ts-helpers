@@ -1,0 +1,46 @@
+{
+  "name": "@nonara/ts-helpers",
+  "version": "0.0.0",
+  "description": "Helpers for TypeScript projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "build": "yarn run clean && yarn run compile",
+    "clean": "rimraf coverage dist **/*.tsbuildinfo",
+    "-------------  ": "-------------",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --collect-coverage",
+    "------------- ": "-------------",
+    "prepublish": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nonara/ts-helpers.git"
+  },
+  "author": "Ron S.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nonara/ts-helpers/issues"
+  },
+  "homepage": "https://github.com/nonara/ts-helpers#readme",
+  "dependencies": {
+    "@types/deepmerge": "^2.2.0",
+    "@types/rfdc": "^1.1.0",
+    "deepmerge": "^4.2.2",
+    "reflect-metadata": "^0.1.13",
+    "rfdc": "^1.1.4",
+    "type-fest": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "jest": "^27.0.6",
+    "standard-version": "^9.3.0",
+    "ts-expose-internals": "^4.3.2",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.1.0"
+  }
+}
