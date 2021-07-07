@@ -14,6 +14,11 @@
     "------------- ": "-------------",
     "prepublish": "yarn build"
   },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/nonara/ts-helpers.git"
