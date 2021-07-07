@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: TBD
-        run: echo TBD
-
       - name: Checkout
         uses: actions/checkout@v2
 
