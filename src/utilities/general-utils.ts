@@ -1,4 +1,3 @@
-import { CamelToSnakeCase, SnakeToCamelCase } from './type-helpers';
 import deepCopy from 'rfdc';
 import deepMerge from 'deepmerge'
 import { JsonValue } from '../types';
@@ -130,60 +129,6 @@ export function normalizeAndJoinPaths(...paths: (string | undefined)[]): string 
     .replace(/[\\\/]+/g, '/')   // Replace backslashes to forward slash & remove running-slashes
     .replace(/\/\.\//g, '/')    // Remove /./
     .replace(/\/$/g, '');       // No trailing slash
-}
-
-/**
- * Converts string from snake_case to camelCase
- */
-export function snakeToCamel<T extends string>(str: T): SnakeToCamelCase<T>
-/**
- * Shallow copies object, converting property keys from snake_case to camelCase
- */
-export function snakeToCamel<T extends object>(obj: T):
-// @formatter:off
-  T extends Array<infer U> ? T :
-  T extends null ? T :
-    { [K in keyof T as SnakeToCamelCase<K>]: T[K] }
-// @formatter:on
-export function snakeToCamel<T extends string | object>(src: T): string | Record<string, any>
-{
-  if (typeof src === 'string')
-    return src
-      .toLowerCase()
-      .replace(/[-_][a-zA-Z]/g, (group) => group.slice(-1).toUpperCase()) as string;
-
-  const res = Object.create(Object.getPrototypeOf(src), Object.getOwnPropertyDescriptors(src)) as any;
-  for (const [ key, value ] of Object.entries(res)) {
-    delete res[key];
-    res[snakeToCamel(key)] = value;
-  }
-  return res;
-}
-
-/**
- * Converts string from camelCase to snake_case
- */
-export function camelToSnake<T extends string>(str: T): CamelToSnakeCase<T>
-/**
- * Shallow copies object, converting property keys from camelCase to snake_case
- */
-export function camelToSnake<T extends object>(obj: T):
-// @formatter:off
-  T extends Array<infer U> ? T :
-  T extends null ? T :
-  { [K in keyof T as CamelToSnakeCase<K>]: T[K] }
-// @formatter:on
-export function camelToSnake<T extends string | object>(src: T): object | string
-{
-  if (typeof src === 'string')
-    return src.replace(/[A-Z]/g, (group) => `_${group.toLowerCase()}`);
-
-  const res = Object.create(Object.getPrototypeOf(src), Object.getOwnPropertyDescriptors(src)) as any;
-  for (const [ key, value ] of Object.entries(res)) {
-    delete res[key];
-    res[camelToSnake(key)] = value;
-  }
-  return res;
 }
 
 // endregion
