@@ -9,7 +9,7 @@
     "build": "yarn run clean && yarn run compile",
     "clean": "rimraf coverage dist **/*.tsbuildinfo",
     "-------------  ": "-------------",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "test:coverage": "jest --collect-coverage",
     "------------- ": "-------------",
     "prepublish": "yarn build"
