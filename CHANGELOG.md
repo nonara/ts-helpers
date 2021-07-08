@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/nonara/ts-helpers/compare/v0.0.3...v0.0.4) (2021-07-08)
+
+
+### Features
+
+* Add options to case-converters ([34e3010](https://github.com/nonara/ts-helpers/commit/34e3010f7f134a98279c7a639c3f86c4b35a2595))
+
 ### [0.0.3](https://github.com/nonara/ts-helpers/compare/v0.0.2...v0.0.3) (2021-07-07)
 
 
