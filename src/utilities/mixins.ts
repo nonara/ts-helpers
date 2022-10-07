@@ -74,7 +74,7 @@ export function mixin<T extends Mixin>(...mixin: (Mixin | MixinConfig<T>)[]) {
         descriptors = Object.getOwnPropertyDescriptors((<Mixin>m).prototype);
       }
 
-      if (!copyConstructor) delete descriptors['constructor'];
+      if (!copyConstructor) delete (<any>descriptors)['constructor'];
       Object.defineProperties(ctor.prototype, descriptors);
     }
   }

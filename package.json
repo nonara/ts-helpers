@@ -42,9 +42,9 @@
     "@types/node": "*",
     "jest": "^27.0.6",
     "standard-version": "^9.3.0",
-    "ts-expose-internals": "^4.3.2",
+    "@types/ts-expose-internals": "npm:ts-expose-internals@4.8.4",
     "ts-jest": "^27.0.3",
-    "typescript": "^4.3.5"
+    "typescript": "^4.8.4"
   },
   "peerDependencies": {
     "typescript": ">=4.1.0"

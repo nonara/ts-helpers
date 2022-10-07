@@ -38,7 +38,7 @@ export function omit<T, K extends keyof T>(obj: T, ...keys: K[]): Omit<T, K> {
 /**
  * Fully typed Object.keys
  */
-export const getKeys = <T>(obj: T): [ keyof T ] => Object.keys(obj) as [ keyof T ];
+export const getKeys = <T>(obj: T): [ keyof T ] => Object.keys(obj as any) as [ keyof T ];
 
 /**
  * Verify that object has all provided keys

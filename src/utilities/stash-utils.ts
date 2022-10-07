@@ -35,14 +35,14 @@ export function stashAndUpdate<T, P extends DeepPartial<T>>(
   });
   const stashedProperties = deepCopy()(pickedProperties) as unknown as P;
   Object.assign(
-    target,
+    target as any,
     !useDeepMerge ? updatedProperties : deepMerge(pickedProperties, <any>updatedProperties, { arrayMerge })
   );
 
   return {
     target,
     stashedProperties,
-    restore: () => Object.assign(target, stashedProperties)
+    restore: () => Object.assign(target as any, stashedProperties)
   }
 }
 

@@ -67,7 +67,7 @@ export namespace predicates {
 // region: Object Nesting
 /* ****************************************************************************************************************** */
 
-export type NestedObject<T extends { [p: string]: any }, TChildrenKey extends string> =
+export type NestedObject<T, TChildrenKey extends string> =
   T &
   { [K in TChildrenKey]: NestedObject<T, TChildrenKey>[] } &
   { flatten(): NestedObject<T, TChildrenKey>[] }
