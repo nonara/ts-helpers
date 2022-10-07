@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/nonara/ts-helpers/compare/v0.0.4...v0.0.5) (2022-10-07)
+
+
+### Changes
+
+* Updated for latest typescript ([fa06445](https://github.com/nonara/ts-helpers/commit/fa064459115f86d2eab8c4494705323d6283a3b6))
+
 ### [0.0.4](https://github.com/nonara/ts-helpers/compare/v0.0.3...v0.0.4) (2021-07-08)
 
 
